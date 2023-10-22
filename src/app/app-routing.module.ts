@@ -8,7 +8,8 @@ const routes: Routes= [
  
   { path:'', component: LoginFormComponent},
    {path: 'sample-form', loadChildren:()=>import ('./sample-form/sample-form.component').then(mod=>mod.SampleFormComponent)},
-  
+   
+ 
 ];
 
 @NgModule({
