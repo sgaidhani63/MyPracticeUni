@@ -1,19 +1,18 @@
 import { NgModule } from '@angular/core';
-import { CommonModule } from '@angular/common';
 import { RouterModule, Routes } from '@angular/router';
-import { SampleFormComponent } from './sample-form/sample-form.component';
-import { LoginFormComponent } from './login-form/login-form.component';
+import { LoginComponentComponent } from './login-component/login-component.component';
 
 const routes: Routes= [
  
-  { path:'', component: LoginFormComponent},
-   {path: 'sample-form', loadChildren:()=>import ('./sample-form/sample-form.component').then(mod=>mod.SampleFormComponent)},
-   
- 
+  { path:'', component: LoginComponentComponent},
+  { path: 'sample-component', loadChildren:()=>import('./sample-module/sample-module.module').then(mod=>mod.SampleModuleModule)},
+  { path: 'second-module', loadChildren:()=>import('./second-module/second-module.module').then(mod=>mod.SecondModuleModule)},
 ];
 
 @NgModule({
   imports: [RouterModule.forRoot(routes)],
   exports: [RouterModule]
 })
-export class AppRoutingModule { }
+export class AppRoutingModule {
+
+ }
