@@ -5,8 +5,8 @@ import { LoginComponentComponent } from './login-component/login-component.compo
 const routes: Routes= [
  
   { path:'', component: LoginComponentComponent},
-  { path: 'sample-component', loadChildren:()=>import('./sample-module/sample-module.module').then(mod=>mod.SampleModuleModule)},
-  { path: 'second-module', loadChildren:()=>import('./second-module/second-module.module').then(mod=>mod.SecondModuleModule)},
+  
+  { path: 'sample-module', loadChildren:()=>import('./sample-module/sample-module.module').then(mod=>mod.SampleModuleModule)},
 ];
 
 @NgModule({
