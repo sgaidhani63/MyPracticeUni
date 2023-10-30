@@ -1,34 +1,26 @@
-<p>sample-component works!</p>
+<div class="container" >
+    <h2>User reg Form</h2>
+    <form [formGroup]="sampleComponanet" >
+        <!-- *ngIf="sampleComponanet" -->
 
-<div class = "container">
-    <h2> User  Reg Form</h2>
+        <label>First Name</label><br>
 
-    <form>
-        <div class = form-group>
-            <label form ="firstname">First Name</label><br>
-            <input type="text" value="firstname" class="form-group">
-        </div>
-        <pre></pre>
-        <div class = form-group>
-            <label form ="lastname">Last Name</label><br>
-            <input type="text" value="lastname" class="form-group">
-        </div>
-        <pre></pre>
-        <div class = form-group>
-            <label form ="email">Email</label><br>
-            <input type="text" value="email" class="form-group">
-        </div>
-        <pre></pre>
+        <input type="text" formControlName="userName"><br>
+        <span class="err" *ngIf="sampleComponanet.get('userName')?.errors?.['maxlength']">
+            Max 7 Char Allowed </span>
+        <span class="err" *ngIf="sampleComponanet.get('userName')?.errors?.['minlength']">
+            Minimum 3 characters are required </span>
+        <span class="err" *ngIf=" !sampleComponanet.get('userName')?.errors?.['maxlength'] 
+         && !sampleComponanet.get('userName')?.errors?.['minlength']
+         && sampleComponanet.get('userName')?.errors?.['pattern']">
+            Enter only Alphabets
+        </span>
+        <br>
+        <br>
 
-        <div class = form-group>
-            <label form ="password">Password</label><br>
-            <input type="text" value="password" class="form-group">
-        </div>
-        <pre></pre>
-        
-        <button class ="btn btn-primary" type ="submit">Submit</button>
-        
+        <button (click)="submit()" [disabled]="!sampleComponanet.valid">Submit</button><br>
+        <br>
     </form>
 
 </div>
-
+<div></div>

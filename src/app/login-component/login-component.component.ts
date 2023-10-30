@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-login-component',
@@ -8,5 +8,10 @@ import { Component } from '@angular/core';
 })
 export class LoginComponentComponent {
 
-
+  constructor (public router: Router){
+  }
+  RegForm()
+  {
+    this.router.navigateByUrl('sample-module/sample-component')
+  }
 }

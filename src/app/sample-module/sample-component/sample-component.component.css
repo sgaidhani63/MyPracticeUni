@@ -1,0 +1,16 @@
+
+.err{
+    color: rgb(255, 238, 0);
+}
+.container{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction:column;
+    background-color: #ff1124;
+    margin: auto;
+    border: 2px solid black;
+    width: 400px;
+    margin-top: 20px;
+    
+}

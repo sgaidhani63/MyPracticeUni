@@ -1,6 +1,7 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { SampleModuleRoutingModule } from './sample-module-routing.module';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { SampleComponentComponent } from './sample-component/sample-component.component';
 
 
@@ -10,6 +11,8 @@ import { SampleComponentComponent } from './sample-component/sample-component.co
   ],
   imports: [
     CommonModule,
+    FormsModule,
+    ReactiveFormsModule,
     SampleModuleRoutingModule
 
   ]

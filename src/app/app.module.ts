@@ -5,6 +5,7 @@ import { AppComponent } from './app.component';
 import { AppRoutingModule } from './app-routing.module'; 
 import { LoginComponentComponent } from './login-component/login-component.component';
 import { SampleModuleModule } from './sample-module/sample-module.module';
+console.log('Login');
 
 @NgModule({
   declarations: 
