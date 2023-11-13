@@ -1,26 +1,46 @@
-<div class="container" >
-    <h2>User reg Form</h2>
+<div class="container">
+   <h2 >User reg Form</h2>
     <form [formGroup]="sampleComponanet" >
         <!-- *ngIf="sampleComponanet" -->
-
         <label>First Name</label><br>
-
-        <input type="text" formControlName="userName"><br>
+        <input type="text" placeholder="FirstName"formControlName="userName"><br>
         <span class="err" *ngIf="sampleComponanet.get('userName')?.errors?.['maxlength']">
-            Max 7 Char Allowed </span>
+            Max 10 Char Allowed </span>
         <span class="err" *ngIf="sampleComponanet.get('userName')?.errors?.['minlength']">
             Minimum 3 characters are required </span>
         <span class="err" *ngIf=" !sampleComponanet.get('userName')?.errors?.['maxlength'] 
          && !sampleComponanet.get('userName')?.errors?.['minlength']
-         && sampleComponanet.get('userName')?.errors?.['pattern']">
-            Enter only Alphabets
+         && sampleComponanet.get('userName')?.errors?.['pattern']"> Enter only Alphabets
+        </span>
+        
+        <br>
+
+        <label>Last Name</label><br>
+        <input type="text" placeholder="LastName" formControlName="LastName"><br>
+        <span class="err" *ngIf="sampleComponanet.get('LastName')?.errors?.['maxlength']">
+            Max 10 Char Allowed </span>
+        <span class="err" *ngIf="sampleComponanet.get('LastName')?.errors?.['minlength']">
+            Minimum 3 characters are required </span>
+        <span class="err" *ngIf="sampleComponanet.get('LastName')?.errors?.['maxlength'] 
+         && !sampleComponanet.get('LastName')?.errors?.['minlength']
+         && sampleComponanet.get('LastName')?.errors?.['pattern']">Enter only Alphabets
         </span>
         <br>
+        <label for=""> Date Of Birth date</label><br>
+        <input type="text" placeholder="DD/MM/YYYY" formControlName="DOB" (blur)="calYear()"><br>
+        <span>Your age : {{userAge}}</span><br>
+        <span class = "err" *ngIf="sampleComponanet.get('DOB')?.errors?.['pattern']" >Please Enter Date in Format</span>
+        <br>
+        <!-- <span  *ngIf="age > 18 && age < 60">age should above 18 and below 60</span> -->
+         <br>
+         <!-- <input type="date" (blur)="calYear()"> -->
+ 
+
+         <br>   
         <br>
 
         <button (click)="submit()" [disabled]="!sampleComponanet.valid">Submit</button><br>
         <br>
     </form>
-
 </div>
 <div></div>
