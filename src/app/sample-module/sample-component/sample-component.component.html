@@ -26,17 +26,69 @@
          && sampleComponanet.get('LastName')?.errors?.['pattern']">Enter only Alphabets
         </span>
         <br>
-        <label for=""> Date Of Birth date</label><br>
-        <input type="text" placeholder="DD/MM/YYYY" formControlName="DOB" (blur)="calYear()"><br>
+        <label>Mob No</label><br>
+        <input type="text" class="mob-inp" formControlName="mobNo" maxlength="10"><br>
+        <span class="err" *ngIf="sampleComponanet.get('mobNo')?.errors?.['pattern']">Enter Numbers Only</span>
+        <br>
+
+        <label>Date Of Birth</label><br>
+        <input type="text" placeholder="DD/MM/YYYY" formControlName="dob" (keyup)="calYear($event)"><br>
         <span>Your age : {{userAge}}</span><br>
-        <span class = "err" *ngIf="sampleComponanet.get('DOB')?.errors?.['pattern']" >Please Enter Date in Format</span>
+        <span class = "err" *ngIf="sampleComponanet.get('DOB')?.errors?.['pattern']"> Please Enter Date in 
+            Format </span>
         <br>
         <!-- <span  *ngIf="age > 18 && age < 60">age should above 18 and below 60</span> -->
          <br>
-         <!-- <input type="date" (blur)="calYear()"> -->
+        <!-- <input type="date" (keyup)="calYear($event)"> -->
+ 
+        <label>Gender</label>
+        <input type="radio" formControlName="gender" value="Male"  (change)="gender()"> Male
+        <input type="radio" formControlName="gender" value="Female" (change)="gender()"> Female <br>
+        <div class="err" *ngIf="isGenderSelected ">Please select gender</div>
+         <br>   
+         <label>Cars</label>
+         <div>
+             <select formControlName="cars" >
+                 <option value="Baleno">Swift</option>
+                 <option value="Tiago">Jaguar</option>
+                 <option value="Wagenar">Wagenar</option>
+                 <option value="Punch">Punch</option>
+                 <option value="Alto">Alto 800</option>
+
+             </select>
+         </div>
+
+         <div>
+            <label >Old </label>
+        </div>
+        <div>
+            <input type="text" formControlName="oldField"><br>
+            <span class="err"
+             *ngIf="sampleComponanet.get('oldField')?.errors?.['oldWord']">
+             Don't write OLD word to this input box
+            </span>  
+        </div>
+        <div>
+            <label for=""> password</label>
+        </div>
+        <div>
+            <input [type]="showPass ? 'text' : 'password'" formControlName="password">
+            <span class="p-viewer" *ngIf="showPass" (click)="showPassword()">
+                <i class="bi bi-eye"></i>
+            </span>
+            <span class="p-viewer" *ngIf="!showPass"> 
+                <i class="bi bi-eye-slash" (click)="showPassword()"></i>
+            </span>
+        </div>
+        <br>
+
+         <input type="checkbox" formControlName="TC"> Please accept terms and conditions <br>
+         <span class="err" *ngIf="sampleComponanet.get('TC')?.invalid &&
+          (sampleComponanet.get('TC')?.touched || sampleComponanet.get('TC')?.dirty)">
+             Please accept terms and conditions
+         </span><br>
  
 
-         <br>   
         <br>
 
         <button (click)="submit()" [disabled]="!sampleComponanet.valid">Submit</button><br>
