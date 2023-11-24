@@ -1,0 +1,13 @@
+body {
+     background-image: url("TajHotel.jpg"); 
+    background-size: cover;
+    background-repeat: no-repeat;
+    height: auto;
+    Width : auto;
+    display: inline-block;
+}
+ html, body { height: 0%; }
+ body { margin: 10px; font-family: Roboto, "Helvetica Neue", sans-serif; 
+    color : red;
+}
+ 
