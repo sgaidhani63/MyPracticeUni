@@ -5,9 +5,11 @@ body {
     height: auto;
     Width : auto;
     display: inline-block;
+    
 }
  html, body { height: 0%; }
  body { margin: 10px; font-family: Roboto, "Helvetica Neue", sans-serif; 
     color : red;
+    
 }
  
