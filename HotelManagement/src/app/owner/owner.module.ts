@@ -4,6 +4,9 @@ import { OwnerRoutingModule } from './owner-routing.module';
 import { OwnerLoginComponent } from './owner-login/owner-login.component';
 import { SharedModule } from '../shared/shared.module';
 import { SignupComponent } from './signup/signup.component';
+import { QunersuccessComponent } from './qunersuccess/qunersuccess.component';
+import { OunersuccessComponent } from './ounersuccess/ounersuccess.component';
+import { OwnersuccessComponent } from './ownersuccess/ownersuccess.component';
 
 
 
@@ -11,6 +14,9 @@ import { SignupComponent } from './signup/signup.component';
   declarations: [
     OwnerLoginComponent,
     SignupComponent,
+    QunersuccessComponent,
+    OunersuccessComponent,
+    OwnersuccessComponent,
 
   ],
   imports: [
