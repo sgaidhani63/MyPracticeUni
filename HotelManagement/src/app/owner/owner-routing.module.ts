@@ -2,11 +2,12 @@ import { Component, NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import { OwnerLoginComponent } from './owner-login/owner-login.component';
 import { SignupComponent } from './signup/signup.component';
+import { OwnersuccessComponent } from './ownersuccess/ownersuccess.component';
 
 const routes: Routes = [
   {path : "", component: OwnerLoginComponent }, 
   {path : "signup", component: SignupComponent},
-  {path : "ownersuccess", Component : },
+  {path : "ownersuccess", Component : OwnersuccessComponent},
 
 ];
 
