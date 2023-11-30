@@ -1,0 +1,12 @@
+.formAlinment{ 
+    border: 2px solid black; 
+    width: 400px; 
+    min-height: 300px; 
+    margin: 20px; 
+    text-align: center; 
+    position: relative; 
+    top: 100px; 
+    padding: 5px 5px; 
+    left: 90px; 
+    margin: auto; 
+} 

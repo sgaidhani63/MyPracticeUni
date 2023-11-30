@@ -1,49 +1,82 @@
 <p>SignUp Form!</p>
 
-<form class ="p"> 
+<form [formGroup]="signupForm"> 
 <div>
     <mat-form-field >
         <mat-label>First Name</mat-label>
-        <input type="text" matInput>
-         </mat-form-field>
-</div>
-<div>
-    <mat-form-field >
-        <mat-label>Last Name</mat-label>
-        <input type="text" matInput>
-         </mat-form-field>
+        <input type="text" matInput formControlName="firstName">
+        <mat-hint *ngIf="!signupForm.get('firstName')?.touched" class="hint">Please Enter First Name </mat-hint> 
+        <mat-error *ngIf="signupForm.get('firstName')?.hasError('required')">First Name is <strong>required</strong></mat-error> 
+       </mat-form-field>
 </div>
 <div>
     <mat-form-field >
         <mat-label>User Name</mat-label>
-        <input type="text" matInput>
-         </mat-form-field>
+        <input type="text" matInput formControlName="userName" > 
+        <mat-hint *ngIf="!signupForm.get('userName')?.touched" class="hint">Please Enter user Name </mat-hint> 
+        <mat-error *ngIf="signupForm.get('userName')?.hasError('required')">User Name is <strong>required</strong></mat-error> 
+        </mat-form-field> 
 </div>
 <div>
     <mat-form-field >
         <mat-label>Email id</mat-label>
-        <input type="text" matInput>
-         </mat-form-field>
+        <input matInput formControlName="email" type="text" >
+            <mat-hint class="hint" *ngIf="!signupForm.get('email')?.touched">Please enter your email address</mat-hint> 
+            <mat-error *ngIf="signupForm.get('email')?.hasError('required')">Email is <strong>required</strong></mat-error> 
+             <mat-error *ngIf="signupForm.get('email')?.hasError('pattern')">Please enter a valid email address</mat-error> 
+          </mat-form-field> 
 </div>
 <div>
     <mat-form-field >
         <mat-label>Mobile number</mat-label>
-        <input type="text" matInput>
-        <span matPrefix>+91 &nbsp;</span>
+        <input matInput formControlName="mobileNumber" placeholder="+91" maxlength="13" > 
+            <mat-hint class="hint" *ngIf="!signupForm.get('userName')?.touched">Please Enter mobile number</mat-hint> 
+            <mat-error *ngIf="signupForm.get('mobileNumber')?.hasError('required')">Mobile Number is required</mat-error> 
+            <mat-error *ngIf="signupForm.get('mobileNumber')?.hasError('pattern')">Invalid mobile number</mat-error> 
          </mat-form-field>
 </div>
 <div>
     <mat-form-field >
-        <mat-label>Password</mat-label>
+        <mat-label>PAN Card</mat-label>
         <input type="text" matInput>
+        <mat-hint *ngIf="!signupForm.get('panNumber')?.touched" class="hint">Please Enter Pan Number </mat-hint> 
+        <mat-error *ngIf="signupForm.get('panNumber')?.hasError('required')">Pan Number is <strong>required</strong></mat-error> 
+
          </mat-form-field>
+</div>
+<div> 
+    <mat-radio-group formControlName="gender"> 
+       
+           <mat-label>Gender</mat-label> 
+            <mat-radio-button value="male">Male</mat-radio-button> 
+            <mat-radio-button value="female">Female</mat-radio-button> 
+            <mat-radio-button value="other">Other</mat-radio-button> 
+            <mat-error *ngIf="signupForm.get('gender')?.hasError('required')">Gender is <strong>required</strong></mat-error> 
+          </mat-radio-group> 
+   
+  </div> 
+<div>
+    <mat-form-field >
+        <mat-label>Enter Password</mat-label>
+        <input matInput formControlName="password" [type]="showpass ? 'text' : 'password'" > 
+        <mat-icon (click)="showPassword()" matSuffix>visibility_off</mat-icon> 
+        <mat-hint class="hint" *ngIf="!signupForm.get('password')?.touched">Enter the Password</mat-hint> 
+        <mat-error *ngIf="signupForm.get('password')?.hasError('required')">password is <strong>required</strong></mat-error> 
+        <mat-error *ngIf="signupForm.get('password')?.hasError('minlength')">password should be at least 8 characters long</mat-error> 
+      </mat-form-field> 
 </div>
 <div>
     <mat-form-field >
-        <mat-label>Confirm Password</mat-label>
-        <input type="text" matInput>
-         </mat-form-field>
+        <mat-label>Enter Confirm Password</mat-label>
+        <input matInput formControlName="ConfirmPassword" [type]="showpass ? 'text' : 'password'" > 
+        <mat-icon (click)="showPassword()" matSuffix>visibility_off</mat-icon> 
+        <mat-hint class="hint" *ngIf="!signupForm.get('ConfirmPassword')?.touched">Enter the Password</mat-hint> 
+        <mat-error *ngIf="signupForm.get('ConfirmPassword')?.hasError('required')">password is <strong>required</strong></mat-error> 
+        <mat-error *ngIf="signupForm.get('ConfirmPassword')?.hasError('minlength')">password should be at least 8 characters long</mat-error> 
+      </mat-form-field> 
 </div>
-<button mat-raised-button color="primary">Owner Submit</button>
-<button mat-raised-button  color="primary">Back</button>
-<form></form>
+<button mat-raised-button color="primary" (click)="submit()"  > Submit </button>
+<button mat-raised-button  color="primary" routerLink="/owner"> Back </button>
+</form><br>
+<br>
+<!-- [disabled]="!signupForm.valid" -->
