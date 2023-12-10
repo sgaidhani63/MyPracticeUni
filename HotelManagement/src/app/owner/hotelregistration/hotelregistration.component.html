@@ -94,8 +94,8 @@
             </div>  -->
             
       
-            <button *ngif = "!recordById" mat-raised-button color="accent" (click)="newHotel()" >Submit</button> 
-            <button *ngif = "recordById" mat-raised-button color="accent" (click)="update()" >Update</button> 
+            <button *ngIf="!recordById" mat-raised-button color="accent" (click)="newHotel()" >Submit</button> 
+            <button *ngIf="recordById" color="accent" mat-raised-button (click)="update()" >Update</button> 
       
         </div> 
      </form>    

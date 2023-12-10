@@ -5,9 +5,7 @@ import { Injectable } from '@angular/core';
   providedIn: 'root'
 })
 export class ApiCallService {
-
-
-  url ="http://localhost:3000";
+   url ="http://localhost:3000";
   ownerName: any;
   recordById: any;
   id: any;
@@ -23,5 +21,9 @@ export class ApiCallService {
     let url = this.url + "/" + endPoint;
    return this.httpClient.get(url);
 
+  }
+  patchApiCall(endpoint:any, id: any ,formData : any) {
+    let url = this.url + "/" + endpoint + "/"+ id;
+    return this.httpClient.patch(url,formData);
   }
 }

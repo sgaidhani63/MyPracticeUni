@@ -50,7 +50,10 @@ newHotel(){
   }) 
 } 
 update(){
-  
+  this.apiCallService.patchApiCall("hotelDetails",this.id,this.newHoteRegister.value).subscribe(res=>{
+
+})
+this.router.navigateByUrl("owner/ownersuccess")
 }
 }
 
