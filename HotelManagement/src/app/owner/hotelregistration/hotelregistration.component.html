@@ -85,16 +85,17 @@
                  <mat-error *ngIf="newHoteRegister.get('pass')?.hasError('minlength')">password should be at least 8 characters long</mat-error> 
                </mat-form-field> 
             </div> 
-      
+<!--       
             <div> 
          
             <mat-checkbox class="example-margin" formControlName="checkBox" >I agree all statements in Terms and Conditions </mat-checkbox> 
              <mat-error *ngIf="newHoteRegister.get('checkBox')?.hasError('required')">Please accept the term and Conditions</mat-error> 
       
-            </div> 
+            </div>  -->
             
       
-            <button mat-raised-button color="accent" (click)="newHotel()" >Submit</button> 
+            <button *ngif = "!recordById" mat-raised-button color="accent" (click)="newHotel()" >Submit</button> 
+            <button *ngif = "recordById" mat-raised-button color="accent" (click)="update()" >Update</button> 
       
         </div> 
      </form>    

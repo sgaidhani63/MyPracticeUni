@@ -3,7 +3,9 @@ import { BrowserModule } from '@angular/platform-browser';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { LandingComponent } from './CommonScreens/landing/landing.component';
-import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { BrowserAnimationsModule, provideAnimations } from '@angular/platform-browser/animations';
+import { HttpClientModule } from '@angular/common/http';
+import { ToastrModule, provideToastr } from 'ngx-toastr';
 
 
 
@@ -12,15 +14,18 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
   declarations: [
     AppComponent,
     LandingComponent,
-    
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     BrowserAnimationsModule, 
+    HttpClientModule,
+
     
   ],
-  providers: [],
+  providers: [
+  provideAnimations(),
+  provideToastr(), ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

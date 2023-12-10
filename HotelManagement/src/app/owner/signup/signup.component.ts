@@ -1,6 +1,7 @@
 import { Component } from '@angular/core';
-import {FormBuilder, FormGroup, FormsModule, Validators} from "@angular/forms";
+import {FormBuilder, FormGroup, Validators} from "@angular/forms";
 import { Router } from '@angular/router';
+import { ApiCallService } from 'src/app/CommonScreens/api-call.service';
 
 
   @Component({
@@ -15,7 +16,8 @@ showWorning: boolean = true;
 gender: boolean = false;
 showpass = false;
 endPoint: string ="owner" ;
-constructor(private fb: FormBuilder, private router: Router) { }
+constructor(private fb: FormBuilder,private apiCallService: ApiCallService,
+  private router: Router) { }
   
 ngOnInit() {
   this.formDetails()
@@ -24,7 +26,7 @@ ngOnInit() {
       this.signupForm = this.fb.group({
         firstName: ['', Validators.required],
         userName: ['',Validators.required],
-        email: ['', [Validators.required, Validators.pattern(/^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/)]],
+        email: ['', [Validators.required, Validators.pattern(/^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}@g(oole)?mail\.com$/)] ],
         mobileNumber: ['', [Validators.required, Validators.pattern('[0-9+]*')]],
         panNumber: ['',[Validators.required]],
         gender: ['male', Validators.required],
@@ -36,7 +38,7 @@ ngOnInit() {
       this.showpass = !this.showpass
     }
     submit() {
-
+      this.apiCallService.postApiCall(this.endPoint,this.signupForm.value).subscribe(res=>{})
       this.router.navigateByUrl('/owner/ownersuccess');
     }
     hideHint() {

@@ -1,8 +1,23 @@
-
-<div >
-    <button mat-raised-button routerLink="/signup" color="primary">Back</button>
+<div>
+    <button mat-raised-button routerLink="/owner" color="primary">Back</button>
     <button mat-raised-button routerLink="/hotelregistration" color="accent">New hotel Registration</button>
-    <button mat-raised-button color="accent">My Hotel List</button>
- 
-</div>
+    <button mat-raised-button color="accent" (click)="HotelDetails()">My Hotel List</button>
 
+</div>
+<div *ngIf="showRecord">
+    <table>
+        <tr>
+            <th *ngFor="let heading of headings"> {{heading}}</th>
+        </tr>
+        <tr *ngFor="let data of hotelDetailsByOwner">
+            <td>{{data.hotelName}}</td>
+            <td>{{data.hotelAdress}}</td>
+            <td>{{data.hotelNumber}}</td>
+            <td>{{data.hotelMenu}}</td>
+            <td>{{data.rooms}}</td>
+            <td>{{data.hotelNumber}}</td>
+            <td><mat-icon (click)="edit(data.id)">create</mat-icon></td>
+            <td><mat-icon (click)="delete(data.id)">delete</mat-icon></td>
+        </tr>
+    </table>
+</div>

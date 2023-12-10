@@ -1,7 +1,77 @@
 {
-  "admin" :[],
-  "owner" :[],
-  "user" :[],
-  "hotelDetails" :[],
-  "hotelBooking" :[]
+  "admin": [],
+  "owner": [
+    {
+      "firstName": "Sagar",
+      "userName": "Sgaidhani",
+      "email": "sgaidhani3@gmail.com",
+      "mobileNumber": "7517629645",
+      "panNumber": "",
+      "gender": "male",
+      "password": "Smg@2022",
+      "ConfirmPassword": "Smg@2022",
+      "id": 1
+    },
+    {
+      "firstName": "akshay",
+      "userName": "akshay77",
+      "email": "akshay@gmail.com",
+      "mobileNumber": "7845128956",
+      "panNumber": "",
+      "gender": "male",
+      "password": "123456789",
+      "ConfirmPassword": "123456789",
+      "id": 2
+    },
+    {
+      "firstName": "gaurav",
+      "userName": "Gaurav77",
+      "email": "gaurav@gmail.com",
+      "mobileNumber": "7845128956",
+      "panNumber": "EFTPY7845L",
+      "gender": "male",
+      "password": "123456789",
+      "ConfirmPassword": "123456789",
+      "id": 3
+    },
+    {
+      "firstName": "fdshg",
+      "userName": "JBFSD",
+      "email": "sgdh",
+      "mobileNumber": "sdfhbfds",
+      "panNumber": "",
+      "gender": "male",
+      "password": "Smg@022",
+      "ConfirmPassword": "Smg@2022",
+      "id": 4
+    }
+  ],
+  "user": [],
+  "hotelDetails": [
+    {
+      "ownerName": "sagar",
+      "mobileNumber": "75176296465",
+      "hotelName": "Taj",
+      "hotelAdress": "Mumbai",
+      "hotelNumber": "8754216598",
+      "hotelMenu": "Pav Bahji",
+      "rooms": "5",
+      "pass": "Smg@2022",
+      "checkBox": "",
+      "id": 1
+    },
+    {
+      "ownerName": "sagar",
+      "mobileNumber": "4587216598",
+      "hotelName": "New Taj",
+      "hotelAdress": "mumbai",
+      "hotelNumber": "6598875421",
+      "hotelMenu": "veg",
+      "rooms": "3",
+      "pass": "Smg@2022",
+      "checkBox": "",
+      "id": 2
+    }
+  ],
+  "hotelBooking": []
 }
