@@ -57,6 +57,7 @@ export class OwnersuccessComponent {
     this.router.navigateByUrl('owner/hotelregistration')
   }
   delete(id: any) {
-  
+    this.apiCallService.deleteApiCall("hotelDetails", id).subscribe(res=>{})
+    this.HotelDetails();
   }
 }
